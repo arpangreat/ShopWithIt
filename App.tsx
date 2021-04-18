@@ -1,5 +1,7 @@
 import { StatusBar } from "expo-status-bar";
 import React from "react";
+import WelcomeScreen from "./app/screens/WelcomeScreen";
+import ViewImageScreen from "./app/screens/ViewImageScreen";
 import {
 	StyleSheet,
 	Text,
@@ -11,42 +13,8 @@ import {
 } from "react-native";
 
 export default function App() {
-	return (
-		<SafeAreaView style={styles.container}>
-			<Text style={styles.White}> Hello World</Text>
-			<TouchableOpacity
-				onPress={() =>
-					Alert.alert("Wow!!", "Image pressed", [
-						{
-							text: "Yes",
-							onPress: () =>
-								console.log(
-									"Yes"
-								),
-						},
-						{
-							text: "No",
-							onPress: () =>
-								console.log(
-									"No"
-								),
-						},
-					])
-				}
-			>
-				<Image
-					fadeDuration={1000}
-					source={{
-						width: 200,
-						height: 300,
-						uri:
-							"https://i.picsum.photos/id/365/200/300.jpg?hmac=n_4DxqK0o938eabBZRnEywWtPwgF2MKoTfnRmJ7vlKQ",
-					}}
-				/>
-			</TouchableOpacity>
-			<StatusBar style="auto" />
-		</SafeAreaView>
-	);
+	// return <WelcomeScreen  />;
+	return <ViewImageScreen />;
 }
 
 const styles = StyleSheet.create({
